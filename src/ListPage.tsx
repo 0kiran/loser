@@ -80,6 +80,8 @@ const ListPage: React.FC = () => {
                     <h6 style={{ color: "gray", textAlign: "center" }}>loading...</h6>
                 )}
 
+                <h6 style={{ color: "gray", textAlign: "center" }}>total guests: {entries.reduce((acc, entry) => acc + (1 + parseInt(entry.guests) || 0), 0)}</h6>
+
                 <div className="posttext">
                     <Link
                         to="#"

@@ -71,7 +71,7 @@ const ListPage: React.FC = () => {
                                 transition={{ delay: i * 0.1 }}
                             >
                                 <li style={{ listStyleType: "none", textAlign: "left" }}>
-                                    {entry.name}, {entry.guests}
+                                    {entry.name} {parseInt(entry.guests) > 0 ? `, ${entry.guests}` : ""}
                                 </li>
                             </motion.div>
                         ))}

@@ -1,6 +1,14 @@
+@font-face {
+  font-family: 'MS PGothic Local';
+  src: url('./fonts/MSPGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
-  font-family: 'メイリオ', Meiryo, '游ゴシック体', YuGothic, 'ＭＳ Ｐゴシック';
+  font-family: 'MS PGothic Local', 'ＭＳ Ｐゴシック';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'メイリオ', Meiryo, '游ゴシック体', YuGothic, 'ＭＳ Ｐゴシック', sans-serif;
+  font-family: 'メイリオ', Meiryo, '游ゴシック体', YuGothic, 'ＭＳ Ｐゴシック';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

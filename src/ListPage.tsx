@@ -60,7 +60,7 @@ const ListPage: React.FC = () => {
                     />
                 </div>
                 <h1 style={{ marginBottom: "24px" }}>Who's Going</h1>
-                <h5 style={{ color: "gray", textAlign: "center" }}>Name, add'l guests</h5>
+                <h5 style={{ color: "gray", textAlign: "center" }}>Name, add'l ppl</h5>
                 {entries && entries.length > 0 ? (
                     <ul>
                         {entries.map((entry, i) => (
@@ -80,7 +80,7 @@ const ListPage: React.FC = () => {
                     <h6 style={{ color: "gray", textAlign: "center" }}>loading...</h6>
                 )}
 
-                <h6 style={{ color: "gray", textAlign: "center" }}>total guests: {entries.reduce((acc, entry) => acc + (1 + parseInt(entry.guests) || 0), 0)}</h6>
+                <h6 style={{ color: "gray", textAlign: "center" }}>total ppl: {entries.reduce((acc, entry) => acc + (1 + parseInt(entry.guests) || 0), 0)}</h6>
 
                 <div className="posttext">
                     <Link

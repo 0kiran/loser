@@ -177,7 +177,7 @@ const App: React.FC = () => {
                             type="number"
                             name="guests"
                             min={0}
-                            placeholder="add'l guests"
+                            placeholder="add'l ppl"
                             onChange={handleChange}
                             required
                             style={{

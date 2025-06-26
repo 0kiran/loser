@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import ReactSwitch from "react-switch";
 import { ThemeContext } from "./context/ThemeContext";
 import { Link } from "react-router-dom";
-import { GOOGLE_SCRIPT_URL } from "./App";
+import { GOOGLE_SCRIPT_URL } from "./Home";
 import axios from 'axios';
 import { motion } from "framer-motion";
 
@@ -22,6 +22,8 @@ const ListPage: React.FC = () => {
     const { theme, toggleTheme } = themeContext;
 
     const [entries, setEntries] = useState<Entry[]>([]);
+    const [loadingTextIndex, setLoadingTextIndex] = useState(0);
+    const loadingVariants = ["|", "/", "-", "\\"];
 
     const loadData = async () => {
         const response = await axios.get(GOOGLE_SCRIPT_URL);
@@ -31,6 +33,16 @@ const ListPage: React.FC = () => {
     useEffect(() => {
         loadData();
     }, []);
+
+    useEffect(() => {
+        if (!entries || entries.length === 0) {
+            const interval = setInterval(() => {
+                setLoadingTextIndex((prev) => (prev + 1) % loadingVariants.length);
+            }, 120);
+            return () => clearInterval(interval);
+        }
+    }, [entries]);
+
     return (
         <div
             className="App"
@@ -77,7 +89,15 @@ const ListPage: React.FC = () => {
                         ))}
                     </ul>
                 ) : (
-                    <h6 style={{ color: "gray", textAlign: "center" }}>loading...</h6>
+                    <h6
+                        style={{
+                            color: "gray",
+                            textAlign: "center",
+                            fontFamily: "'Courier New', Courier, monospace" // Use a different font for loading text
+                        }}
+                    >
+                        {loadingVariants[loadingTextIndex]}
+                    </h6>
                 )}
 
                 <h6 style={{ color: "gray", textAlign: "center" }}>total count: {entries.reduce((acc, entry) => acc + (1 + parseInt(entry.guests) || 0), 0)}</h6>

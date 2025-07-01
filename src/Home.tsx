@@ -98,7 +98,15 @@ const Home: React.FC<HomeProps> = ({ theme, toggleTheme }) => {
           animate="animate"
         >
           <motion.div variants={itemVariants}>
-            <h1>ｋｉｒａｎ . wtf</h1>
+            <Link
+              to="/"
+              style={{
+                textDecoration: "none",
+                color: theme === "dark" ? "#fff" : "#000",
+              }}
+            >
+              <h1>ｋｉｒａｎ . wtf</h1>
+            </Link>
           </motion.div>
           <motion.div variants={itemVariants}>
             <div className="switch">
@@ -175,7 +183,6 @@ const Home: React.FC<HomeProps> = ({ theme, toggleTheme }) => {
                   min={0}
                   placeholder="add'l ppl"
                   onChange={handleChange}
-                  required
                   style={{
                     padding: "10px",
                     border: "none",
@@ -299,7 +306,7 @@ const Home: React.FC<HomeProps> = ({ theme, toggleTheme }) => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </div >
   );
 
 };

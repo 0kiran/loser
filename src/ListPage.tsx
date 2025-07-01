@@ -56,7 +56,15 @@ const ListPage: React.FC = () => {
             }}
         >
             <div className="container">
-                <h1>ｋｉｒａｎ . wtf</h1>
+                <Link
+                    to="/"
+                    style={{
+                        textDecoration: "none",
+                        color: theme === "dark" ? "#fff" : "#000",
+                    }}
+                >
+                    <h1>ｋｉｒａｎ . wtf</h1>
+                </Link>
                 <div className="switch">
                     <label style={{ marginRight: "20px" }}>
                         {theme === "light" ? "ʕ´• ᴥ•̥`ʔ" : "(っ´ω｀c)"}
@@ -129,7 +137,7 @@ const ListPage: React.FC = () => {
                             }
                         }}
                     >
-                        <span className="arrow">{'<'}</span> rsvp
+                        <span className="arrow">{'<'}</span>  rsvp
                         <style>
                             {`
                                             .whos-going-link .arrow {

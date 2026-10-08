@@ -41,7 +41,7 @@ const ListPage: React.FC = () => {
             }, 120);
             return () => clearInterval(interval);
         }
-    }, [entries]);
+    }, [entries, loadingVariants.length]);
 
     return (
         <div

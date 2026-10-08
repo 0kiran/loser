@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "functions": { "api/feed.mjs": { "maxDuration": 60 } },
+  "rewrites": [
+    { "source": "/birthday", "destination": "/index.html" },
+    { "source": "/list", "destination": "/index.html" }
+  ]
+}

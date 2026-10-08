@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import ReactSwitch from "react-switch";
 import { ThemeContext } from "./context/ThemeContext";
 import { Link } from "react-router-dom";
-import { GOOGLE_SCRIPT_URL } from "./Home";
+import { GOOGLE_SCRIPT_URL } from "./Birthday";
 import axios from 'axios';
 import { motion } from "framer-motion";
 
@@ -130,14 +130,14 @@ const ListPage: React.FC = () => {
                             if (arrow) {
                                 arrow.classList.add('animate-arrow');
                                 setTimeout(() => {
-                                    window.location.href = "/";
+                                    window.location.href = "/birthday";
                                 }, 200); // match transition duration
                             } else {
-                                window.location.href = "/";
+                                window.location.href = "/birthday";
                             }
                         }}
                     >
-                        <span className="arrow">{'<'}</span>  rsvp
+                        <span className="arrow">{'<'}</span>  birthday archive
                         <style>
                             {`
                                             .whos-going-link .arrow {

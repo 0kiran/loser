@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeContext";
 import ListPage from "./ListPage";
 import Home from "./Home";
+import Birthday from "./Birthday";
 
 const App: React.FC = () => {
 
@@ -31,6 +32,7 @@ const App: React.FC = () => {
               />
             }
           />
+          <Route path="/birthday" element={<Birthday theme={theme} toggleTheme={toggleTheme} />} />
           <Route path="/list" element={<ListPage />} />
         </Routes>
       </Router>
